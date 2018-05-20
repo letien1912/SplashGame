@@ -1,8 +1,7 @@
-package splashgame.base
+package game.splashgame.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 
 /**
 * Created by Kushina on 25/03/2018.

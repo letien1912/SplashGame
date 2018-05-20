@@ -1,9 +1,9 @@
-package splashgame.injection.component
+package game.splashgame.injection.component
 
-import splashgame.injection.module.ContextModule
+import game.splashgame.injection.module.ContextModule
 import dagger.BindsInstance
 import dagger.Component
-import splashgame.base.BaseView
+import game.splashgame.base.BaseView
 import javax.inject.Singleton
 
 /**

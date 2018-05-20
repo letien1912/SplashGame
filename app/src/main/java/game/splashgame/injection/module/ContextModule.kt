@@ -1,10 +1,10 @@
-package splashgame.injection.module
+package game.splashgame.injection.module
 
 import android.app.Application
 import android.content.Context
 import dagger.Module
 import dagger.Provides
-import splashgame.base.BaseView
+import game.splashgame.base.BaseView
 
 
 @Module

@@ -1,7 +1,8 @@
-package splashgame.base
+package game.splashgame.base
 
-import splashgame.injection.component.PresenterInjector
-import splashgame.injection.module.ContextModule
+import game.splashgame.injection.component.DaggerPresenterInjector
+import game.splashgame.injection.component.PresenterInjector
+import game.splashgame.injection.module.ContextModule
 
 /**
 * Created by Kushina on 25/03/2018.

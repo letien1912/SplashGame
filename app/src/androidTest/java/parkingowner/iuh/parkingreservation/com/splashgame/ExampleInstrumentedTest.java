@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("parkingowner.iuh.parkingreservation.com.splashgame", appContext.getPackageName());
+        assertEquals("parkingowner.iuh.parkingreservation.com.game.splashgame", appContext.getPackageName());
     }
 }

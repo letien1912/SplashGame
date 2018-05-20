@@ -1,4 +1,4 @@
-package splashgame.base
+package game.splashgame.base
 
 import android.content.Context
 
