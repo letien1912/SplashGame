@@ -4,8 +4,8 @@ import android.graphics.Bitmap
 
 data class GamePoint(
         var type: String,
-        var lot: Location,
-        var lastMove: Location,
+        var currentMove: Location,
+        var lastMove: MutableList<Location> = mutableListOf(),
         var imgRes: Bitmap,
         var pos: Location,
         var status: Int
