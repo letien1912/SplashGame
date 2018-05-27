@@ -1,36 +1,28 @@
 package game.splashgame.ui
 
-import android.support.v7.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
-import android.os.Handler
+import android.util.Log
 import android.view.View
+import game.splashgame.base.BaseActivity
+import game.splashgame.model.GameData
 
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var gameView: GameView
-    private val handler = Handler()
+class MainActivity : BaseActivity<MainPresenter>(), MainContract.View {
 
     companion object {
-        private const val TIMER_INTERVAL = 30.toLong()
+        val TAG = MainActivity::class.java.simpleName
     }
 
-
+    private lateinit var gameView: GameView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
+        presenter.createData()
+    }
 
-        gameView = GameView(this)
-        setContentView(gameView)
-//        val time = Timer()
-//        time.schedule(object : TimerTask() {
-//            override fun run() {
-//                handler.post {
-//                    gameView.invalidate()
-//                }
-//            }
-//        }, 0, TIMER_INTERVAL)
+    override fun onResume() {
 
+        super.onResume()
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -39,6 +31,13 @@ class MainActivity : AppCompatActivity() {
             hideSystemUI()
         }
     }
+
+    override fun onGameDataLoaded(gameData: List<GameData>) {
+        Log.d(TAG, "game data with data = ${gameData[0].question} number: ${gameData[0].number}")
+        gameView = GameView(this, gameData[0])
+        setContentView(gameView)
+    }
+
 
     private fun hideSystemUI() {
         // Enables regular immersive mode.
@@ -54,6 +53,14 @@ class MainActivity : AppCompatActivity() {
                 // Hide the nav bar and status bar
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
+    }
+
+    override fun instantiatePresenter(): MainPresenter {
+        return MainPresenter(this)
+    }
+
+    override fun getContexts(): Context {
+        return this
     }
 
 }
