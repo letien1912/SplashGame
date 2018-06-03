@@ -7,6 +7,8 @@ import dagger.Module
 import game.splashgame.base.BaseView
 import game.splashgame.injection.module.RoomModule
 import game.splashgame.ui.MainPresenter
+import game.splashgame.ui.home.HomePresenter
+import game.splashgame.ui.level.LevelPresenter
 import javax.inject.Singleton
 
 /**
@@ -23,6 +25,8 @@ interface PresenterInjector {
 //    fun getSharedPreferences(): SharedPreferences
 
     fun inject(presenter: MainPresenter)
+    fun inject(presenter: LevelPresenter)
+    fun inject(presenter: HomePresenter)
 
     @Component.Builder
     interface Builder {

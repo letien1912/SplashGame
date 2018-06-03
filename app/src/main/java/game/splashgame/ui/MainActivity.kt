@@ -21,7 +21,6 @@ class MainActivity : BaseActivity<MainPresenter>(), MainContract.View {
     }
 
     override fun onResume() {
-
         super.onResume()
     }
 

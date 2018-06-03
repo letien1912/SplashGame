@@ -5,6 +5,8 @@ import game.splashgame.injection.component.PresenterInjector
 import game.splashgame.injection.module.ContextModule
 import game.splashgame.injection.module.RoomModule
 import game.splashgame.ui.MainPresenter
+import game.splashgame.ui.home.HomePresenter
+import game.splashgame.ui.level.LevelPresenter
 
 /**
 * Created by Kushina on 25/03/2018.
@@ -38,6 +40,8 @@ abstract class BasePresenter<out V : BaseView>(protected val view: V) {
     private fun inject() {
         when (this) {
             is MainPresenter -> injector.inject(this)
+            is LevelPresenter -> injector.inject(this)
+            is HomePresenter -> injector.inject(this)
         }
     }
 
